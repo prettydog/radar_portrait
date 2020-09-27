@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type='text/javascript' charset="utf-8" src="./static/js/d3.js"></script>
+    <script type='text/javascript' src="./static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="Chart.js"></script>
+</head>
+<body style="background: #161616">
+<div id="chart" style='background: #161616;float: left;'></div>
+<div id="point" style='background: #161616;float: left;'></div>
+<div id="pie" style='background: #161616;float: left;'></div>
+<script>
+    let div = '#chart';
+    let data = [
+        [
+            {axis: "学历", value: 10},
+            {axis: "综合", value: 11.6},
+            {axis: "风险", value: 11.8},
+            {axis: "抗压", value: 10},
+            {axis: "消费", value: 12},
+            {axis: "流水", value: 12},
+            {axis: "车辆", value: 10},
+            {axis: "房产", value: 12},
+            {axis: "履约", value: 10},
+            {axis: "负债", value: 12},
+            {axis: "收入", value: 12},
+        ]
+    ];
+    let tempData = [
+        '上官婉儿',
+        '女',
+        '中国江苏省扬州市',
+        '画家',
+        '爱好收藏名画',
+        '已婚已育',
+        '百万家产',
+        '中产阶级',
+        'f',
+        '一儿一女',
+        '自由职业者',
+        '17800966880',
+        '24岁',
+        '25岁',
+    ];
+    let width = 400,
+        //width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+        height = 400;
+        //height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+    Chart.radar({
+        w: width,
+        h: height,
+        levels: 6,
+        showLevels: 2,
+        data: data,
+        circleData: tempData,
+        id: div
+    });
+    let point = [
+        {axis: "学历", value: 10},
+        {axis: "学历2", value: 100},
+        {axis: "综合", value: 11.6}
+    ];
+    Chart.point({
+        id: '#point',
+        w: 200,
+        h: 300,
+        r:10,
+        sectorWidth:25,
+        data:point,
+    });
+    let pie = [
+        {axis: "学历", value: 7},
+        {axis: "综合", value: 19},
+        {axis: "风险", value: 23},
+        {axis: "消费", value: 24},
+        {axis: "抗压", value: 27},
+        {axis: "抗压2", value: 9},
+        {axis: "抗压3", value: 8},
+    ];
+    Chart.pie({
+        id: '#pie',
+        w: 200,
+        h: 300,
+        data:pie,
+    });
+</script>
+</body>
+</html>
