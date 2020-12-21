@@ -512,7 +512,7 @@ let Chart = {
                 .attr("height", circle_r)//每个矩形的高度
                 .attr("fill", "#232323")//填充颜色
                 .style("fill-opacity", 1)
-                .attr("href", "./center.jpg");
+                .attr("href", "center.jpg");
             // 中心点
             /*g.append("text")
                 .attr("x", cfg.w / 2 - 5)
